@@ -4,6 +4,6 @@ void ParseArgs(int &argc, char ** argv);
 
 void PrintHelp();
 
-void RunSpecifiedMode(std::string *mode, std::string *drive, std::string *file);
 
-std::string ExtractValue(int argc, char** argv, const char* param);
+std::string ExtractValue(int argc, char** argv, const char* param, bool* isFinded);
+void RunSpecifiedMode(std::string *mode, std::string *drive, std::string *file, long long& offset, long long& bytes);
