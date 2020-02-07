@@ -16,6 +16,9 @@ Usage:
   
 Sample:
 
+```
+
+
 .\HiddenMassStorageUtility.exe -f mbr.img -m r -d \\.\PHYSICALDRIVE1 
 
 
@@ -23,3 +26,6 @@ Sample:
 
 
 .\HiddenMassStorageUtility.exe -f folder8.bin -m wd -d \\.\PHYSICALDRIVE1 -o 1073741824 -b 1211640
+
+
+```
