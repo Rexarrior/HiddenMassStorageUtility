@@ -29,7 +29,6 @@ int main(int argc, char** argv)
 	sprintf_s(argv[8], len, "-o");
 	sprintf_s(argv[9], len, "0");*/
 	ParseArgs(argc, (char**)argv);
-	getchar();
 	/*for (int i = 0; i < argc; i++)
 	{
 		free(argv[i]);
@@ -58,13 +57,7 @@ std::string ExtractValue(int argc, char** argv, const char* param, bool* isFinde
 
 void ParseArgs(int &argc, char ** argv)
 {
-	/*cxxopts::Options options("MyProgram", "One line description of MyProgram");
-	options.add_options()
-		("m,mode", "Work mode:\n Can be \"w\" - Write mbr to MassStorage.\n \"r\" - Read MBR from MassStorage and save it.",
-			cxxopts::value<std::string>())
-		("f,file", "Specified file name. Use for saving or loading some data", cxxopts::value<std::string>())
-		("d,drive", "Physical drive for apply specidied action", cxxopts::value<std::string>())
-		;*/
+	
 
 	bool isFinded;
 	std::string drive;

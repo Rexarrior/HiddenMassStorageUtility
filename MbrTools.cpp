@@ -128,7 +128,8 @@ int ReadDataArea(const char* device, const char* path, const long long offset, c
 			DWORD size = bytes;
 			byte *mbr = new byte[size];
 			long low = (long)offset;
-			long hight = (long)(offset >> sizeof(long));
+			long hight = NULL;
+			//long hight = (long)(offset >> sizeof(long));
 			SetFilePointer(drive, low, &hight, FILE_BEGIN);
 			if (ReadFile(drive, mbr, size, &dw, 0)) {
 				if (WriteFile(binary, mbr, size, &dw, 0))
@@ -140,7 +141,11 @@ int ReadDataArea(const char* device, const char* path, const long long offset, c
 
 			}
 			else
+			{
 				result = ERROR_READING_MBR;
+				DWORD res = GetLastError();
+				printf("Last error is %d\n", res);
+			}
 		}
 		else {
 			result = BINARY_FILE_NOT_FOUNT;
@@ -165,8 +170,9 @@ int WriteDataArea(const char* device, const char* path, const long long offset)
 		if (binary != INVALID_HANDLE_VALUE) {
 			DWORD size = GetFileSize(binary, 0);
 			long low = (long)offset;
-			long hight = (long)(offset >> sizeof(long));
-			SetFilePointer(drive, low, &hight, FILE_BEGIN);
+			long hight = NULL;
+			//long hight = (long)(offset >> sizeof(long));
+			DWORD res = SetFilePointer(drive, low, &hight, FILE_BEGIN);
 			if (size > 0) {
 				byte *mbr = new byte[size];
 				if (ReadFile(binary, mbr, size, &dw, 0)) {
@@ -175,7 +181,11 @@ int WriteDataArea(const char* device, const char* path, const long long offset)
 						result = dw;
 					}
 					else
+					{
 						result = CANT_OVERRIDE_1ST_SECTOR;
+						res = GetLastError();
+						printf("Last error is %d\n", res);
+					}
 				}
 				else
 					result = ERROR_READING_BINARY_FILE;
