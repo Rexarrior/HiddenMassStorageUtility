@@ -2,7 +2,7 @@
 Utility to making a hidden sectors in massstorage devices
 
 
-Usage: 
+# Usage: 
 
   * -m - Work mode. Can be r,rd, w, wd - read mbr, read data, write mbr, write data. Data modes require -o argument, wd require -b argument
 	
@@ -14,7 +14,7 @@ Usage:
 	
   * -b --bytes - Bytes to read. To use with rd mode
   
-Sample:
+# Sample:
 
 ```
 
@@ -29,3 +29,9 @@ Sample:
 
 
 ```
+
+
+# Attention:
+
+Offset and bytes count should be divided by sector size.
+Size of file to loading to memory also should be divided by sector size.
