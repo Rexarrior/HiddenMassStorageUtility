@@ -32,6 +32,6 @@ Utility to making a hidden sectors in massstorage devices
 
 
 # Attention:
-
+All operations require administrator privileges. 
 Offset and bytes count should be divided by sector size.
 Size of file to loading to memory also should be divided by sector size.
