@@ -10,9 +10,9 @@ Utility to making a hidden sectors in massstorage devices
 	
   * -o - Offset for reading or writing data to drive
 	
-  * -d --drive - Physical drive for apply specidied action
+  * -d  - Physical drive for apply specidied action
 	
-  * -b --bytes - Bytes to read. To use with rd mode
+  * -b  - Bytes to read. To use with rd mode
   
 # Sample:
 
